@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "id": "sculk_spread_api_testmod",
+  "version": "1.0.0",
+
+  "name": "Sculk Spread API Testmod",
+  "description": "Testmod for Sculk Spread API",
+  "authors": [
+    "FrozenBlock"
+  ],
+  "contact": {
+    "homepage": "https://github.com/FrozenBlock/SculkSpreadAPI",
+    "sources": "https://github.com/FrozenBlock/SculkSpreadAPI",
+    "issues": "https://github.com/FrozenBlock/SculkSpreadAPI/issues"
+  },
+
+  "license": "Apache-2.0",
+  "icon": "assets/sculk_spread_api_testmod/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.frozenblock.sculkspreadapi_testmod.SculkSpreadAPITestmod"
+    ],
+    "frozenlib:events": [
+      "net.frozenblock.sculkspreadapi_testmod.TestmodBehavior$StartCharge",
+      "net.frozenblock.sculkspreadapi_testmod.TestmodBehavior$EndCharge",
+      "net.frozenblock.sculkspreadapi_testmod.TestmodBehavior$AddActivator"
+    ]
+  },
+
+  "depends": {
+    "frozenlib": ">=1.1.11-",
+    "fabricloader": ">=0.14.12",
+    "fabric-api": ">=0.73.0",
+    "minecraft": ">=1.19.2",
+    "java": ">=17"
+  },
+  "breaks": {
+    "quilted_fabric_api": "4.0.0-beta.8"
+  },
+  "suggests": {
+    "cloth-config": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/EpkBWm844s"
+      },
+      "badges": [
+        "frozenblock"
+      ]
+    }
+  }
+}

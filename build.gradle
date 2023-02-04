@@ -19,8 +19,36 @@ plugins {
 	id("java-library")
 }
 
+project.ext.release = findProperty("releaseType") == "stable"
+
+setArchivesBaseName(project.archives_base_name)
+setVersion(getVersion())
+setGroup(project.maven_group)
+
+sourceSets {
+	testmod {
+		runtimeClasspath += main.runtimeClasspath
+		compileClasspath += main.compileClasspath
+	}
+}
+
 loom {
 	setRuntimeOnlyLog4j(true)
+
+	runs {
+		testmodClient {
+			client()
+			ideConfigGenerated(project.rootProject == project)
+			name("Testmod Client")
+			source(sourceSets.testmod)
+		}
+		testmodServer {
+			server()
+			ideConfigGenerated(project.rootProject == project)
+			name("Testmod Server")
+			source(sourceSets.testmod)
+		}
+	}
 
 	mixin {
 		setDefaultRefmapName("mixins.sculk_spread_api.refmap.json")
@@ -69,6 +97,21 @@ configurations {
 
 	implementation.extendsFrom(includeImplementation)
 	modImplementation.extendsFrom(includeModImplementation)
+}
+
+sourceSets {
+	api {
+		java {
+			compileClasspath += main.compileClasspath
+		}
+	}
+
+	main {
+		java {
+			compileClasspath += api.output
+			runtimeClasspath += api.output
+		}
+	}
 }
 
 repositories {
@@ -182,6 +225,8 @@ dependencies {
 
 	// BetterNether
 	modCompileOnly("maven.modrinth:betternether:${betternether_version}")
+
+	testmodImplementation(sourceSets.main.output)
 
 	// only affects runClient, does not affect gradlew build.
 	// add -PuseThirdPartyMods=false to not use these
