@@ -1,38 +1,38 @@
 {
   "schemaVersion": 1,
-  "id": "frozenblock_template_mod",
+  "id": "sculk_spread_api",
   "version": "${version}",
 
-  "name": "FrozenBlock Template Mod",
-  "description": "Template description",
+  "name": "Sculk Spread API",
+  "description": "An API that allows mods to change how sculk spreads in the world",
   "authors": [
     "FrozenBlock"
   ],
   "contact": {
-    "homepage": "https://github.com/FrozenBlock/frozenblock-template-mod",
-    "sources": "https://github.com/FrozenBlock/frozenblock-template-mod",
-    "issues": "https://github.com/FrozenBlock/frozenblock-template-mod/issues"
+    "homepage": "https://github.com/FrozenBlock/SculkSpreadAPI",
+    "sources": "https://github.com/FrozenBlock/SculkSpreadAPI",
+    "issues": "https://github.com/FrozenBlock/SculkSpreadAPI/issues"
   },
 
-  "license": "LGPL-3.0",
-  "icon": "assets/frozenblock_template_mod/icon.png",
+  "license": "Apache-2.0",
+  "icon": "assets/sculk_spread_api/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.frozenblock.template.TemplateMod"
+      "net.frozenblock.sculkspreadapi.SculkSpreadAPI"
     ],
     "client": [
-      "net.frozenblock.template.TemplateModClient"
+      "net.frozenblock.sculkspreadapi.SculkSpreadAPIClient"
     ],
     "fabric-datagen": [
-      "net.frozenblock.template.datagen.TemplateModDataGenerator"
+      "net.frozenblock.sculkspreadapi.datagen.SculkSpreadAPIDataGenerator"
     ]
   },
   "mixins": [
-    "frozenblock_template_mod.mixins.json"
+    "sculk_spread_api.mixins.json"
   ],
-  "accessWidener": "frozenblock_template_mod.accesswidener",
+  "accessWidener": "sculk_spread_api.accesswidener",
 
   "depends": {
     "frozenlib": ">=1.1.11-",

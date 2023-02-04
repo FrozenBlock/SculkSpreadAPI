@@ -23,10 +23,10 @@ loom {
 	setRuntimeOnlyLog4j(true)
 
 	mixin {
-		setDefaultRefmapName("mixins.frozenblock_template_mod.refmap.json")
+		setDefaultRefmapName("mixins.sculk_spread_api.refmap.json")
 	}
 
-	setAccessWidenerPath(file("src/main/resources/frozenblock_template_mod.accesswidener"))
+	setAccessWidenerPath(file("src/main/resources/sculk_spread_api.accesswidener"))
 	interfaceInjection {
 		// When enabled, injected interfaces from dependecies will be applied.
 		setEnableDependencyInterfaceInjection(false)
@@ -52,7 +52,7 @@ loom {
 			vmArg("-Dfabric-api.datagen")
 			vmArg("-Dfabric-api.datagen.output-dir=${file("src/main/generated")}")
 			//vmArg("-Dfabric-api.datagen.strict-validation")
-			vmArg("-Dfabric-api.datagen.modid=frozenblock_template_mod")
+			vmArg("-Dfabric-api.datagen.modid=sculk_spread_api")
 
 			setIdeConfigGenerated(true)
 			setRunDir("build/datagen")

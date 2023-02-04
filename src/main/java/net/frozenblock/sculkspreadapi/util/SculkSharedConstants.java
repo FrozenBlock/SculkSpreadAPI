@@ -1,4 +1,4 @@
-package net.frozenblock.template.util;
+package net.frozenblock.sculkspreadapi.util;
 
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
@@ -11,8 +11,8 @@ import org.slf4j.LoggerFactory;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TemplateSharedConstants {
-	public static final String MOD_ID = "frozenblock_template_mod";
+public class SculkSharedConstants {
+	public static final String MOD_ID = "sculk_spread_api";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static boolean DEV_LOGGING = false;
 	/**
